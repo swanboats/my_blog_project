@@ -1,0 +1,6 @@
+blog_env/      # 仮想環境を除外
+__pycache__/   # Pythonキャッシュを除外
+db.sqlite3     # SQLiteのデータベースファイルを除外
+*.pyc          # Pythonのバイトコードを除外
+*.pyo          # 最適化されたPythonバイトコードを除外
+*.log          # ログファイルを除外
