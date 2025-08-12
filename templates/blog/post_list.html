@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ブログ</title>
+</head>
+<body>
+    <h1>ブログ記事一覧</h1>
+
+    {% for post in posts %}
+        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+        <p>{{ post.content|truncatechars:100 }}</p>
+        <p>作成日時: {{ post.created_at }}</p>
+    {% endfor %}
+    
+</body>
+</html>
