@@ -1,0 +1,168 @@
+/* 全体フォントを草書体に */
+body, h1, h2, h3, h4, h5, h6, p, a, button {
+    font-family: 'Dancing Script', cursive !important;
+}
+
+/* 背景 */
+body {
+  background-image: url("/static/images/cat.png"); /* お好みの画像に変更 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Dancing Script', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダー */
+.blog-header {
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.site-title {
+  font-size: 3rem;
+  color: #4B3621;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin: 0;
+}
+
+.blog-header p {
+  font-size: 1.2rem;
+}
+
+/* 記事一覧タイトル */
+.post-list-title {
+  font-size: 2rem;
+  color: #5C4033;
+  margin-bottom: 1.5rem;
+}
+
+/* 投稿カード */
+.post-card {
+  background-color: #fff8f0;
+  border: 1px solid #ffd1dc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card h5 {
+  font-size: 1.5rem;
+  color: #5C4033;
+  margin-bottom: 0.5rem;
+}
+
+.post-card p {
+  flex-grow: 1;
+}
+
+/* Continue here! ボタン */
+.btn-continue {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #f5f5dc; /* ベージュ */
+  color: #4B3621;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  border: 2px solid #d2b48c;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-continue:hover {
+  background-color: #ffffff;
+  color: #8b4513;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 記事詳細画面 */
+.post-detail {
+  background-color: #fffaf0;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.post-detail-title {
+  font-size: 2.5rem;
+  color: #4B3621;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.post-detail-date {
+  text-align: center;
+  color: #8b4513;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.post-detail-image {
+  display: block;
+  max-width: 100%;
+  border-radius: 15px;
+  margin: 0 auto 20px auto;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.post-detail-content {
+  color: #5C4033;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* 戻るボタン */
+.btn-cute-back {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #f5f5dc;
+  color: #4B3621;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  border: 2px solid #d2b48c;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-cute-back:hover {
+  background-color: #ffffff;
+  color: #8b4513;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .post-detail {
+    padding: 15px;
+    margin: 10px;
+  }
+  .post-detail-title {
+    font-size: 2rem;
+  }
+  .post-card h5 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ブログ</title>
-</head>
-<body>
-    <h1>ブログ記事一覧</h1>
+{% extends 'base.html' %}
+{% block title %}記事一覧{% endblock %}
 
-    {% for post in posts %}
-        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-        <p>{{ post.content|truncatechars:100 }}</p>
-        <p>作成日時: {{ post.created_at }}</p>
-    {% endfor %}
-    
-</body>
-</html>
+{% block content %}
+<h2 class="mb-4 post-list-title">Latest articles</h2>
+<div class="row">
+  {% for post in posts %}
+    <div class="col-md-4 mb-4">
+      <div class="card post-card h-100 d-flex flex-column">
+        {% if post.image %}
+          <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.content|truncatewords:20 }}</p>
+          <a href="{% url 'post_detail' post.id %}" class="btn-continue mt-auto text-center">Continue here!</a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>投稿はまだありません。</p>
+  {% endfor %}
+</div>
+{% endblock %}
