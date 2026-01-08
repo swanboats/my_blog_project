@@ -15,3 +15,11 @@ class SiteSetting(models.Model):
 
     def __str__(self):
         return self.site_title
+
+class Profile(models.Model):
+    name = models.CharField(max_length=100, verbose_name="名前")
+    bio = models.TextField(verbose_name="プロフィール文", blank=True)
+    icon = models.ImageField(upload_to='profile_icons/', verbose_name="プロフィール画像", blank=True, null=True)
+
+    def __str__(self):
+        return self.name

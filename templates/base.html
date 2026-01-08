@@ -4,7 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}ブログ{% endblock %}</title>
+
+  <title>
+    {% block title %}
+      {% if site_setting %}
+        {{ site_setting.site_title }}
+      {% else %}
+        photo diary
+      {% endif %}
+    {% endblock %}
+  </title>
 
   <!-- Google Fonts: 草書体 -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -18,12 +27,20 @@
   {% block extra_css %}{% endblock %}
 </head>
 <body>
+
   <!-- ヘッダー -->
   <header class="blog-header"
-          {% if site_setting and site_setting.header_image %}
-          style="background-image: url('{{ site_setting.header_image.url }}');"
-          {% endif %}>
-    <h1 class="site-title">{% if site_setting %}{{ site_setting.site_title }}{% else %}My Blog{% endif %}</h1>
+    {% if site_setting and site_setting.header_image %}
+      style="background-image: url('{{ site_setting.header_image.url }}');"
+    {% endif %}
+  >
+    <h1 class="site-title">
+      {% if site_setting %}
+        {{ site_setting.site_title }}
+      {% else %}
+        photo diary
+      {% endif %}
+    </h1>
     <p>Welcome and thanks for watching!</p>
   </header>
 
@@ -34,7 +51,14 @@
 
   <!-- フッター -->
   <footer class="text-center mt-5 mb-3">
-    <p>&copy; 2025 My Blog</p>
+    <p>
+      &copy; 2025
+      {% if site_setting %}
+        {{ site_setting.site_title }}
+      {% else %}
+        photo diary
+      {% endif %}
+    </p>
   </footer>
 
   <!-- Bootstrap JS -->
