@@ -4,3 +4,4 @@ db.sqlite3     # SQLiteのデータベースファイルを除外
 *.pyc          # Pythonのバイトコードを除外
 *.pyo          # 最適化されたPythonバイトコードを除外
 *.log          # ログファイルを除外
+*.pyc
